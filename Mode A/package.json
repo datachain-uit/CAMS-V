@@ -1,0 +1,28 @@
+{
+  "name": "zkp_evoting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "register": "npx hardhat run test/register.js --network localhost",
+    "vote": "npx hardhat run test/vote.js --network localhost",
+    "aggregate": "npx hardhat run test/aggregate.js --network localhost",
+    "partial": "npx hardhat run test/partial.js --network localhost",
+    "tally": "npx hardhat run test/tally.js --network localhost"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^6.1.0",
+    "hardhat": "^2.28.4"
+  },
+  "dependencies": {
+    "@noble/secp256k1": "^3.0.0",
+    "circomlib": "^2.0.5",
+    "circomlibjs": "^0.1.7",
+    "ipfs": "^0.66.1",
+    "ipfs-core": "^0.18.1",
+    "kubo-rpc-client": "^6.1.0",
+    "snarkjs": "^0.7.6"
+  }
+}

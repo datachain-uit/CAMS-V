@@ -1,0 +1,3 @@
+circuit,compile_time_s,compile_size_mb,zkey_time_s,zkey_size_mb,export_time_s,export_size_mb,total_time_s,total_size_mb,constraints
+VoteProofCombined,7.178,28.662,51.803,24.131,0.841,0.007114,59.822,52.8,39893
+TallyValidity,1.924,21.332,41.922,26.073,0.836,0.006741,44.682,47.412,51201

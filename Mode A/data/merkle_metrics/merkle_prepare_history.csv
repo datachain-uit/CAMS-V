@@ -1,0 +1,8 @@
+timestamp,nVoters,voterFile,buildTreeTimeMs,rootTimeMs,totalProofGenTimeMs,avgProofGenTimeMs,writeFileTimeMs,totalPrepareTimeMs,pathLength
+2026-04-16T04:58:28.134Z,1000,"/home/phithong/zk-voting/a/zkp-EHOVA/data/voter_data_for_db_1000.json",90.26,0.08,6.07,0.006065,13.42,654.44,10
+2026-04-16T04:58:29.798Z,10000,"/home/phithong/zk-voting/a/zkp-EHOVA/data/voter_data_for_db_10000.json",790.74,0.01,58.25,0.005825,199.48,1661.87,14
+2026-04-16T04:58:32.640Z,20000,"/home/phithong/zk-voting/a/zkp-EHOVA/data/voter_data_for_db_20000.json",1546.66,0.01,179.98,0.008999,326.22,2840.96,15
+2026-04-16T04:58:38.031Z,40000,"/home/phithong/zk-voting/a/zkp-EHOVA/data/voter_data_for_db_40000.json",3022.88,0.01,338.83,0.008471,823.54,5389.35,16
+2026-04-16T04:58:45.599Z,60000,"/home/phithong/zk-voting/a/zkp-EHOVA/data/voter_data_for_db_60000.json",4514.86,0.01,594.01,0.009900,971.03,7567.48,16
+2026-04-16T04:58:55.549Z,80000,"/home/phithong/zk-voting/a/zkp-EHOVA/data/voter_data_for_db_80000.json",6123.67,0.01,843.89,0.010549,1574.47,10600.78,17
+2026-04-16T04:59:08.814Z,100000,"/home/phithong/zk-voting/a/zkp-EHOVA/data/voter_data_for_db_100000.json",7856.58,0.00,1144.77,0.011448,2013.50,13264.09,17

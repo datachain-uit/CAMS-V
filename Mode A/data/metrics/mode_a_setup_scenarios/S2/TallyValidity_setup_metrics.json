@@ -1,0 +1,23 @@
+{
+  "circuit": "TallyValidity",
+  "compile_time_s": 0.473,
+  "compile_size_mb": 4.281,
+  "zkey_time_s": 14.963,
+  "zkey_size_mb": 5.417,
+  "export_time_s": 0.835,
+  "export_size_mb": 0.006742,
+  "total_time_s": 16.271,
+  "total_size_mb": 9.704,
+  "constraints": 10241,
+  "paths": {
+    "circuitFile": "circuits/TallyValidity.circom",
+    "outDir": "circuits/build/TallyValidity",
+    "r1cs": "circuits/build/TallyValidity/TallyValidity.r1cs",
+    "sym": "circuits/build/TallyValidity/TallyValidity.sym",
+    "wasm": "circuits/build/TallyValidity/TallyValidity_js/TallyValidity.wasm",
+    "zkey0": "circuits/build/TallyValidity/TallyValidity_0000.zkey",
+    "zkey": "circuits/build/TallyValidity/TallyValidity.zkey",
+    "vkey": "circuits/build/TallyValidity/TallyValidity_vkey.json",
+    "sol": "contracts/TallyValidityVerifier.sol"
+  }
+}

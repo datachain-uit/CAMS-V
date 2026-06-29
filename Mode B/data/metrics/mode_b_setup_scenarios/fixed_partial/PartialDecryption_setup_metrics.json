@@ -1,0 +1,23 @@
+{
+  "circuit": "PartialDecryption",
+  "compile_time_s": 1.181,
+  "compile_size_mb": 1.759,
+  "zkey_time_s": 7.416,
+  "zkey_size_mb": 1.726,
+  "export_time_s": 0.795,
+  "export_size_mb": 0.006748,
+  "total_time_s": 9.393,
+  "total_size_mb": 3.491,
+  "constraints": 3331,
+  "paths": {
+    "circuitFile": "circuits/PartialDecryption.circom",
+    "outDir": "circuits/build/PartialDecryption",
+    "r1cs": "circuits/build/PartialDecryption/PartialDecryption.r1cs",
+    "sym": "circuits/build/PartialDecryption/PartialDecryption.sym",
+    "wasm": "circuits/build/PartialDecryption/PartialDecryption_js/PartialDecryption.wasm",
+    "zkey0": "circuits/build/PartialDecryption/PartialDecryption_0000.zkey",
+    "zkey": "circuits/build/PartialDecryption/PartialDecryption.zkey",
+    "vkey": "circuits/build/PartialDecryption/PartialDecryption_vkey.json",
+    "sol": "contracts/PartialDecryptionVerifier.sol"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-04-16T04:58:55.549Z",
+  "voterFile": "/home/phithong/zk-voting/a/zkp-EHOVA/data/voter_data_for_db_80000.json",
+  "nVoters": 80000,
+  "root": "16520265371004398598290390346853726797408807180746840753396441042969899881214",
+  "pathLength": 17,
+  "buildTreeTimeMs": 6123.674217,
+  "rootTimeMs": 0.005032999997638399,
+  "totalProofGenTimeMs": 843.8903680000003,
+  "avgProofGenTimeMs": 0.010548629600000003,
+  "writeFileTimeMs": 1574.4677870000014,
+  "totalPrepareTimeMs": 10600.783414000001
+}

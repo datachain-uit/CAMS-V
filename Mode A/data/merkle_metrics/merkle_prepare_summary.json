@@ -1,0 +1,93 @@
+[
+  {
+    "timestamp": "2026-04-16T04:58:28.134Z",
+    "voterFile": "/home/phithong/zk-voting/a/zkp-EHOVA/data/voter_data_for_db_1000.json",
+    "nVoters": 1000,
+    "root": "11236427806671981653881886019934403346246541053536842158633241231188183086379",
+    "pathLength": 10,
+    "buildTreeTimeMs": 90.25793399999998,
+    "rootTimeMs": 0.08268100000009326,
+    "totalProofGenTimeMs": 6.065373000000136,
+    "avgProofGenTimeMs": 0.006065373000000136,
+    "writeFileTimeMs": 13.422500000000127,
+    "totalPrepareTimeMs": 654.440439
+  },
+  {
+    "timestamp": "2026-04-16T04:58:29.798Z",
+    "voterFile": "/home/phithong/zk-voting/a/zkp-EHOVA/data/voter_data_for_db_10000.json",
+    "nVoters": 10000,
+    "root": "19616085788151745383083574255076458325696395465538905062633026985067820252374",
+    "pathLength": 14,
+    "buildTreeTimeMs": 790.7397389999999,
+    "rootTimeMs": 0.014556999999967957,
+    "totalProofGenTimeMs": 58.25193799999988,
+    "avgProofGenTimeMs": 0.005825193799999988,
+    "writeFileTimeMs": 199.483655,
+    "totalPrepareTimeMs": 1661.873215
+  },
+  {
+    "timestamp": "2026-04-16T04:58:32.640Z",
+    "voterFile": "/home/phithong/zk-voting/a/zkp-EHOVA/data/voter_data_for_db_20000.json",
+    "nVoters": 20000,
+    "root": "16295443155058016851922243246360249513000405114660055721883992834476267278525",
+    "pathLength": 15,
+    "buildTreeTimeMs": 1546.65578,
+    "rootTimeMs": 0.007013000000370084,
+    "totalProofGenTimeMs": 179.9805980000001,
+    "avgProofGenTimeMs": 0.008999029900000005,
+    "writeFileTimeMs": 326.2154700000001,
+    "totalPrepareTimeMs": 2840.961743
+  },
+  {
+    "timestamp": "2026-04-16T04:58:38.031Z",
+    "voterFile": "/home/phithong/zk-voting/a/zkp-EHOVA/data/voter_data_for_db_40000.json",
+    "nVoters": 40000,
+    "root": "16032231024170429273034857031244519133286203041726810571043798208481904901591",
+    "pathLength": 16,
+    "buildTreeTimeMs": 3022.8810219999996,
+    "rootTimeMs": 0.006991999998717802,
+    "totalProofGenTimeMs": 338.83270999999877,
+    "avgProofGenTimeMs": 0.008470817749999969,
+    "writeFileTimeMs": 823.5434239999995,
+    "totalPrepareTimeMs": 5389.348411999999
+  },
+  {
+    "timestamp": "2026-04-16T04:58:45.599Z",
+    "voterFile": "/home/phithong/zk-voting/a/zkp-EHOVA/data/voter_data_for_db_60000.json",
+    "nVoters": 60000,
+    "root": "8338177809734779759768137731332183267910374918398059927306152032175927394722",
+    "pathLength": 16,
+    "buildTreeTimeMs": 4514.856169999999,
+    "rootTimeMs": 0.005153000001882901,
+    "totalProofGenTimeMs": 594.0095970000002,
+    "avgProofGenTimeMs": 0.009900159950000004,
+    "writeFileTimeMs": 971.0254850000019,
+    "totalPrepareTimeMs": 7567.482362000001
+  },
+  {
+    "timestamp": "2026-04-16T04:58:55.549Z",
+    "voterFile": "/home/phithong/zk-voting/a/zkp-EHOVA/data/voter_data_for_db_80000.json",
+    "nVoters": 80000,
+    "root": "16520265371004398598290390346853726797408807180746840753396441042969899881214",
+    "pathLength": 17,
+    "buildTreeTimeMs": 6123.674217,
+    "rootTimeMs": 0.005032999997638399,
+    "totalProofGenTimeMs": 843.8903680000003,
+    "avgProofGenTimeMs": 0.010548629600000003,
+    "writeFileTimeMs": 1574.4677870000014,
+    "totalPrepareTimeMs": 10600.783414000001
+  },
+  {
+    "timestamp": "2026-04-16T04:59:08.814Z",
+    "voterFile": "/home/phithong/zk-voting/a/zkp-EHOVA/data/voter_data_for_db_100000.json",
+    "nVoters": 100000,
+    "root": "200382812987589655697146312043228834567271571258268299435559032820205079869",
+    "pathLength": 17,
+    "buildTreeTimeMs": 7856.581048000004,
+    "rootTimeMs": 0.004605000001902226,
+    "totalProofGenTimeMs": 1144.7749799999947,
+    "avgProofGenTimeMs": 0.011447749799999947,
+    "writeFileTimeMs": 2013.504869000004,
+    "totalPrepareTimeMs": 13264.085695999998
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "circuit": "VoteProofCombined",
+  "compile_time_s": 3.692,
+  "compile_size_mb": 9.331,
+  "zkey_time_s": 24.104,
+  "zkey_size_mb": 6.195,
+  "export_time_s": 0.805,
+  "export_size_mb": 0.007116,
+  "total_time_s": 28.601,
+  "total_size_mb": 15.533,
+  "constraints": 10433,
+  "paths": {
+    "circuitFile": "circuits/VoteProofCombined.circom",
+    "outDir": "circuits/build/VoteProofCombined",
+    "r1cs": "circuits/build/VoteProofCombined/VoteProofCombined.r1cs",
+    "sym": "circuits/build/VoteProofCombined/VoteProofCombined.sym",
+    "wasm": "circuits/build/VoteProofCombined/VoteProofCombined_js/VoteProofCombined.wasm",
+    "zkey0": "circuits/build/VoteProofCombined/VoteProofCombined_0000.zkey",
+    "zkey": "circuits/build/VoteProofCombined/VoteProofCombined.zkey",
+    "vkey": "circuits/build/VoteProofCombined/VoteProofCombined_vkey.json",
+    "sol": "contracts/VoteProofCombinedVerifier.sol"
+  }
+}

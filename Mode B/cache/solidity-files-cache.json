@@ -1,0 +1,410 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/home/phithong/zk-voting/zkp-EVoting/contracts/E_Voting.sol": {
+      "lastModificationDate": 1770391175248,
+      "contentHash": "3add202f6e7cac3543d79c338cb75e99",
+      "sourceName": "contracts/E_Voting.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ParticialDecriptionVerifier.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "E_Voting"
+      ]
+    },
+    "/home/phithong/zk-voting/zkp-EVoting/contracts/ParticialDecriptionVerifier.sol": {
+      "lastModificationDate": 1770391175248,
+      "contentHash": "99cb9aee6a8253ccc24ae1471376b301",
+      "sourceName": "contracts/ParticialDecriptionVerifier.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.0 <0.9.0"
+      ],
+      "artifacts": [
+        "ParticialDecriptionVerifier"
+      ]
+    },
+    "/home/phithong/zk-voting/zkp-EVoting/contracts/ParticialDecriptionVerifier2.sol": {
+      "lastModificationDate": 1770391175248,
+      "contentHash": "9d80d9b10d18073dcb155b527277255b",
+      "sourceName": "contracts/ParticialDecriptionVerifier2.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.0 <0.9.0"
+      ],
+      "artifacts": [
+        "ParticialDecriptionVerifier"
+      ]
+    },
+    "/home/phithong/zk-voting/zkp-EVoting/contracts/TallyValidityVerifier.sol": {
+      "lastModificationDate": 1770391175248,
+      "contentHash": "9db877e9f8431723fbaf07f46613f8c7",
+      "sourceName": "contracts/TallyValidityVerifier.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.0 <0.9.0"
+      ],
+      "artifacts": [
+        "TallyValidityVerifier"
+      ]
+    },
+    "/home/phithong/zk-voting/zkp-EVoting/contracts/TallyVerifier.sol": {
+      "lastModificationDate": 1770040313483,
+      "contentHash": "12cc3e704c3c5dd7a71e90a158c80e3b",
+      "sourceName": "contracts/TallyVerifier.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./TallyValidityVerifier.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.0 <0.9.0"
+      ],
+      "artifacts": [
+        "TallyVerifierOnChain"
+      ]
+    },
+    "/home/phithong/zk-voting/zkp-EVoting/contracts/TallyValidityVerifier1.sol": {
+      "lastModificationDate": 1770391175257,
+      "contentHash": "7a154db003c39e0aae947282b4b314a0",
+      "sourceName": "contracts/TallyValidityVerifier1.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.0 <0.9.0"
+      ],
+      "artifacts": [
+        "TallyValidityVerifier"
+      ]
+    },
+    "/home/phithong/zk-voting/CAMS-V/Mode B/contracts/E_Voting.sol": {
+      "lastModificationDate": 1776239505707,
+      "contentHash": "f87a8b49b46d91238dc8c442d1d7bac0",
+      "sourceName": "contracts/E_Voting.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./PartialDecryptionVerifier.sol",
+        "./VoteProofCombinedVerifier.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "E_Voting"
+      ]
+    },
+    "/home/phithong/zk-voting/CAMS-V/Mode B/contracts/PartialDecryptionVerifier.sol": {
+      "lastModificationDate": 1776244294308,
+      "contentHash": "e9cea5b501bd253b5e47cc7593075ad7",
+      "sourceName": "contracts/PartialDecryptionVerifier.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.0 <0.9.0"
+      ],
+      "artifacts": [
+        "PartialDecryptionVerifier"
+      ]
+    },
+    "/home/phithong/zk-voting/CAMS-V/Mode B/contracts/VoteProofCombinedVerifier.sol": {
+      "lastModificationDate": 1781435218790,
+      "contentHash": "5b26842b1a06cdf0fc08a7fefe92a8cb",
+      "sourceName": "contracts/VoteProofCombinedVerifier.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.0 <0.9.0"
+      ],
+      "artifacts": [
+        "VoteProofCombinedVerifier"
+      ]
+    },
+    "/home/phithong/zk-voting/CAMS-V/Mode B/contracts/TallyValidityVerifier.sol": {
+      "lastModificationDate": 1781435248258,
+      "contentHash": "3b85395d40c392bbb140df17e551e1fa",
+      "sourceName": "contracts/TallyValidityVerifier.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.0 <0.9.0"
+      ],
+      "artifacts": [
+        "TallyValidityVerifier"
+      ]
+    },
+    "/home/phithong/zk-voting/CAMS-V/Mode B/contracts/TallyVerifier.sol": {
+      "lastModificationDate": 1774665022718,
+      "contentHash": "12cc3e704c3c5dd7a71e90a158c80e3b",
+      "sourceName": "contracts/TallyVerifier.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./TallyValidityVerifier.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.0 <0.9.0"
+      ],
+      "artifacts": [
+        "TallyVerifierOnChain"
+      ]
+    }
+  }
+}

@@ -1,0 +1,2 @@
+circuit,compile_time_s,compile_size_mb,zkey_time_s,zkey_size_mb,export_time_s,export_size_mb,total_time_s,total_size_mb,constraints
+PartialDecryption,1.016,1.759,7.356,1.726,0.827,0.006746,9.199,3.491,3331
