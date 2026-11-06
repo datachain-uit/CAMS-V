@@ -10,7 +10,7 @@ const { ethers } = hre;
 
 const VOTER_DB_FILE = path.join(
   __dirname,
-  "../data/voter_data_for_db_100000.json",
+  "../data/voter_data_for_db_1000.json",
 );
 const DKG_FOLDER = path.join(__dirname, "../data/dkgKeys");
 
@@ -19,8 +19,8 @@ const ELECTION_NAME = "Demo Election";
 const ELECTION_DURATION = 7 * 24 * 3600;
 const NUM_CANDIDATES = 2;
 
-const TOTAL_TRUSTEES = 3;
-const THRESHOLD = 2;
+const TOTAL_TRUSTEES = 7;
+const THRESHOLD = 4;
 
 function ensureDir(dirPath) {
   fs.mkdirSync(dirPath, { recursive: true });
@@ -179,7 +179,7 @@ main().catch((error) => {
 
 // const VOTER_DB_FILE = path.join(
 //   __dirname,
-//   "../data/voter_data_for_db_100000.json",
+//   "../data/voter_data_for_db_1000.json",
 // );
 // const DKG_FOLDER = path.join(__dirname, "../data/dkgKeys");
 

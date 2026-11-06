@@ -6,7 +6,7 @@ const { getContract } = require("../configs/blockchain");
 
 const AGGREGATION_FILE = path.join(__dirname, "../data/aggregation.json");
 
-const TOTAL_TRUSTEES = 3;
+const TOTAL_TRUSTEES = 7;
 
 async function main() {
   const { votingContract } = await getContract(TOTAL_TRUSTEES + 1);

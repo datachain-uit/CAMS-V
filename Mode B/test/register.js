@@ -10,7 +10,7 @@ const { ethers } = hre;
 
 const VOTER_DB_FILE = path.join(
   __dirname,
-  "../data/voter_data_for_db_100000.json",
+  "../data/voter_data_for_db_1000.json",
 );
 const DKG_FOLDER = path.join(__dirname, "../data/dkgKeys");
 

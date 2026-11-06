@@ -16,8 +16,8 @@ const ZKEY_PATH = path.join(
   "../circuits/build/PartialDecryption/PartialDecryption.zkey",
 );
 
-const TOTAL_TRUSTEES = 3;
-const THRESHOLD = 2;
+const TOTAL_TRUSTEES = 7;
+const THRESHOLD = 4;
 
 function parseError(error) {
   return (

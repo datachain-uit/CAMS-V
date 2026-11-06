@@ -10,7 +10,7 @@ const USE_TALLY_CONTRACT = true;
 const LOOKBACK_BLOCKS = 100;
 const CHUNK_SIZE = 50;
 
-const THRESHOLD = 2;
+const THRESHOLD = 4;
 
 const TALLY_INPUT_PATH = path.join(
   __dirname,

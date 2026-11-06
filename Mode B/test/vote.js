@@ -12,11 +12,11 @@ const { uploadToIPFS } = require("../utils/ipfs");
 
 const VOTER_DB_FILE = path.join(
   __dirname,
-  "../data/voter_data_for_db_100000.json",
+  "../data/voter_data_for_db_1000.json",
 );
 const VOTER_SECRETS_FILE = path.join(
   __dirname,
-  "../data/voter_secrets_for_script_100000.json",
+  "../data/voter_secrets_for_script_1000.json",
 );
 const DKG_PUBLIC_KEY_PATH = path.join(
   __dirname,
@@ -456,11 +456,11 @@ main().catch((error) => {
 
 // const VOTER_DB_FILE = path.join(
 //   __dirname,
-//   "../data/voter_data_for_db_100000.json"
+//   "../data/voter_data_for_db_1000.json"
 // );
 // const VOTER_SECRETS_FILE = path.join(
 //   __dirname,
-//   "../data/voter_secrets_for_script_100000.json"
+//   "../data/voter_secrets_for_script_1000.json"
 // );
 // const DKG_PUBLIC_KEY_PATH = path.join(
 //   __dirname,

@@ -1,7 +1,7 @@
 const hre = require("hardhat");
 
-const VOTING_ADDRESS = "0x7a2088a1bFc9d81c55368AE168C2C02570cB814F";
-const TALLY_VERIFIER_ADDRESS = "0x09635F643e140090A9A8Dcd712eD6285858ceBef";
+const VOTING_ADDRESS = "0xd9fEc8238711935D6c8d79Bef2B9546ef23FC046";
+const TALLY_VERIFIER_ADDRESS = "0xd3FFD73C53F139cEBB80b6A524bE280955b3f4db";
 
 async function getContract(signerIndex = 0) {
   const signers = await hre.ethers.getSigners();

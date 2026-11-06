@@ -4,7 +4,7 @@ const { buildPoseidon } = require("circomlibjs");
 
 const merkleUtils = require("../utils/merkleUtils");
 
-const VOTER_DB_FILE = path.join(__dirname, "../data/voter_data_for_db_100000.json");
+const VOTER_DB_FILE = path.join(__dirname, "../data/voter_data_for_db_1000.json");
 
 async function prepareVoters() {
   const rawData = JSON.parse(fs.readFileSync(VOTER_DB_FILE, "utf8"));
