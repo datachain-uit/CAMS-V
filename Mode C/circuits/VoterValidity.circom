@@ -3,6 +3,7 @@ pragma circom 2.1.5;
 include "circomlib/circuits/babyjub.circom";
 include "circomlib/circuits/poseidon.circom";
 include "circomlib/circuits/mux1.circom";
+include "circomlib/circuits/comparators.circom";
 
 template VoterValidity(depth) {
     signal input sk;             
@@ -12,6 +13,15 @@ template VoterValidity(depth) {
     signal input root;         
     signal input hash_pk;      
     signal input election_hash;
+
+    // A unique scalar representation is required because the nullifier hashes
+    // sk, while the voter public key only determines sk modulo the subgroup order.
+    component skBits = Num2Bits(251);
+    skBits.in <== sk;
+    component skRange = LessThan(251);
+    skRange.in[0] <== sk;
+    skRange.in[1] <== 2736030358979909402780800718157159386076813972158567259200215660948447373041;
+    skRange.out === 1;
 
     component gen = BabyPbk();
     gen.in <== sk;
@@ -32,6 +42,7 @@ template VoterValidity(depth) {
     signal right[depth];
 
     for (var i = 0; i < depth; i++) {
+        pathIndices[i] * (1 - pathIndices[i]) === 0;
         mux[i][0] = Mux1();
         mux[i][0].c[0] <== cur[i];
         mux[i][0].c[1] <== pathElements[i];

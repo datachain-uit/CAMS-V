@@ -12,4 +12,18 @@ async function uploadToIPFS(data) {
   }
 }
 
-export { uploadToIPFS };
+async function fetchBallotFromIPFS(cid) {
+  if (typeof cid !== "string" || !cid.startsWith("ipfs://")) {
+    throw new Error("Expected ipfs:// CID");
+  }
+  const chunks = [];
+  let size = 0;
+  for await (const chunk of client.cat(cid.slice(7))) {
+    size += chunk.length;
+    if (size > 1024 * 1024) throw new Error("Ballot exceeds 1 MiB");
+    chunks.push(Buffer.from(chunk));
+  }
+  return JSON.parse(Buffer.concat(chunks).toString("utf8"));
+}
+
+export { uploadToIPFS, fetchBallotFromIPFS };

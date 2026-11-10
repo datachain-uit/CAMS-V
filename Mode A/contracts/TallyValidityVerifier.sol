@@ -37,19 +37,19 @@ contract TallyValidityVerifier {
     uint256 constant gammax2 = 10857046999023057135944570762232829481370756359578518086990519993285655852781;
     uint256 constant gammay1 = 4082367875863433681332203403145435568316851327593401208105741076214120093531;
     uint256 constant gammay2 = 8495653923123431417604973247489272438418190587263600148770280649306958101930;
-    uint256 constant deltax1 = 3132031975608369205490857139290743291259843961666561342804479778808604319314;
-    uint256 constant deltax2 = 9401988911064165365563614941023986714417533830893368266240230616144402945646;
-    uint256 constant deltay1 = 8907022944465255255865798765324004166211399844810415230761322605476803680391;
-    uint256 constant deltay2 = 15637664995932877377172290447695625577680415344523357568558350758572911719770;
+    uint256 constant deltax1 = 4763432497761907187390069305012488170411762479172389415934983978437151402410;
+    uint256 constant deltax2 = 805634515065387232715995816913375868815539395464846792165612603983688284205;
+    uint256 constant deltay1 = 11448104903470196576397240046400948816218562807344362746895955913617918793012;
+    uint256 constant deltay2 = 19243768979693006891795676717626564157028915420480941840469121007758444144845;
 
-    
+
     uint256 constant IC0x = 14816065105508054739202843322109219555488520076298577325090691471554119595182;
     uint256 constant IC0y = 8624502766424985547153840417973836026381896164885815670772689555388115915554;
-    
+
     uint256 constant IC1x = 3647724699060838924101951654966457487701802938905209165407552077099991256083;
     uint256 constant IC1y = 18679196238070591561333739641411927189897757561521934586854237314321888315133;
-    
- 
+
+
     // Memory data
     uint16 constant pVk = 0;
     uint16 constant pPairing = 128;
@@ -64,7 +64,7 @@ contract TallyValidityVerifier {
                     return(0, 0x20)
                 }
             }
-            
+
             // G1 function to multiply a G1 value(x,y) to value in an address
             function g1_mulAccC(pR, x, y, s) {
                 let success
@@ -99,9 +99,9 @@ contract TallyValidityVerifier {
                 mstore(add(_pVk, 32), IC0y)
 
                 // Compute the linear combination vk_x
-                
+
                 g1_mulAccC(_pVk, IC1x, IC1y, calldataload(add(pubSignals, 0)))
-                
+
 
                 // -A
                 mstore(_pPairing, calldataload(pA))
@@ -154,9 +154,9 @@ contract TallyValidityVerifier {
             mstore(0x40, add(pMem, pLastMem))
 
             // Validate that all evaluations ∈ F
-            
+
             checkField(calldataload(add(_pubSignals, 0)))
-            
+
 
             // Validate all evaluations
             let isValid := checkPairing(_pA, _pB, _pC, _pubSignals, pMem)

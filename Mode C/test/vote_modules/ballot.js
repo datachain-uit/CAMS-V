@@ -1,11 +1,7 @@
 const crypto = require("crypto");
 const { ethers } = require("hardhat");
 
-function hashElectionId(poseidon, value) {
-  const F = poseidon.F;
-  const chars = Array.from(value).map((char) => BigInt(char.charCodeAt(0)));
-  return F.toObject(poseidon(chars)).toString();
-}
+const { hashElectionId } = require("../../utils/ballot");
 
 function pickRandomChoices(numCandidates, numSelections) {
   if (numSelections > numCandidates) {

@@ -133,8 +133,8 @@ function main() {
   updateFile(files.voteProofCombined, (content) =>
     replaceOrFail(
       content,
-      /component\s+main\s*=\s*VotingCircuit\(\s*\d+\s*,\s*\d+\s*\)\s*;/,
-      `component main = VotingCircuit(${depth}, ${numCandidates});`,
+      /component\s+main\s*(?:\{\s*public\s*\[[^\]]*\]\s*\})?\s*=\s*VotingCircuit\(\s*\d+\s*,\s*\d+(?:\s*,\s*\d+)?\s*\)\s*;/,
+      `component main {public [root, election_hash, PKx, PKy]} = VotingCircuit(${depth}, ${numCandidates}, ${numSelections});`,
       files.voteProofCombined,
     ),
   );

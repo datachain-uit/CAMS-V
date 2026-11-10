@@ -406,8 +406,8 @@
       ]
     },
     "/home/phithong/zk-voting/CAMS-V/Mode C/contracts/E_Voting.sol": {
-      "lastModificationDate": 1793243395028,
-      "contentHash": "4bbc259e2bb392fcc02ccf6a4cbe1824",
+      "lastModificationDate": 1794325132592,
+      "contentHash": "21afbcfed4bad21fd3ca7c993d524c6e",
       "sourceName": "contracts/E_Voting.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -481,8 +481,8 @@
       ]
     },
     "/home/phithong/zk-voting/CAMS-V/Mode C/contracts/VoteProofCombinedVerifier.sol": {
-      "lastModificationDate": 1793717589514,
-      "contentHash": "a525ad9b3e2908011eb8a3da6f964975",
+      "lastModificationDate": 1794325271269,
+      "contentHash": "73980e0e875bd1b76f0045d7041ae2f3",
       "sourceName": "contracts/VoteProofCombinedVerifier.sol",
       "solcConfig": {
         "version": "0.8.20",

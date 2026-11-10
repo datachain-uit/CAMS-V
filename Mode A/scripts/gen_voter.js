@@ -40,7 +40,7 @@
 // };
 
 // async function main() {
-//   const NUM_VOTERS_TO_GENERATE = 500000;
+//   const NUM_VOTERS_TO_GENERATE = 1000;
 //   const ELECTION_ID = "ELC2026";
 
 //   const __filename = fileURLToPath(import.meta.url);

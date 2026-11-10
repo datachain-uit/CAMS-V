@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test:r1": "hardhat run scripts/test_r1.js",
     "register": "npx hardhat run test/register.js --network localhost",
     "vote": "npx hardhat run test/vote.js --network localhost",
     "aggregate": "npx hardhat run test/aggregate.js --network localhost",

@@ -8,15 +8,16 @@ const { buildBabyjub, buildPoseidon } = require("circomlibjs");
 const { performance } = require("perf_hooks");
 
 const { getContract } = require("../configs/blockchain");
-const { uploadToIPFS } = require("../utils/ipfs");
+const { uploadToIPFS, fetchBallotFromIPFS } = require("../utils/ipfs");
+const { createVoteSubmitter, hashElectionId } = require("../utils/voteAcceptance");
 
 const VOTER_DB_FILE = path.join(
   __dirname,
-  "../data/voter_data_for_db_500000.json",
+  "../data/voter_data_for_db_1000.json",
 );
 const VOTER_SECRETS_FILE = path.join(
   __dirname,
-  "../data/voter_secrets_for_script_500000.json",
+  "../data/voter_secrets_for_script_1000.json",
 );
 const DKG_PUBLIC_KEY_PATH = path.join(
   __dirname,
@@ -115,16 +116,6 @@ function appendCSVData(data) {
   fs.appendFileSync(CSV_FILE, row, "utf8");
 }
 
-function toBytes32(value) {
-  return ethers.zeroPadValue(ethers.toBeHex(BigInt(value)), 32);
-}
-
-function hashElectionId(poseidon, value) {
-  const F = poseidon.F;
-  const chars = Array.from(value).map((char) => BigInt(char.charCodeAt(0)));
-  return F.toObject(poseidon(chars)).toString();
-}
-
 function pickRandomChoices(numCandidates, numSelections) {
   if (numSelections > numCandidates) {
     throw new Error("numSelections cannot be greater than numCandidates");
@@ -221,37 +212,6 @@ async function generateWitnessAndProof(witnessInput, voterId, index) {
     proofGenerationTimeMs,
   };
 }
-
-function createVoteSubmitter(votingContract, vKey) {
-  const seen = new Set();
-
-  return async function submitVoteLocal(proof, publicSignals, voteData) {
-    const isValid = await groth16.verify(vKey, publicSignals, proof);
-    if (!isValid) {
-      return { code: 1, gasUsed: 0n };
-    }
-
-    const key = `${voteData.election_id}|${voteData.nullifier}`;
-    if (seen.has(key)) {
-      return { code: 2, gasUsed: 0n };
-    }
-
-    seen.add(key);
-
-    const tx = await votingContract.submitVote(
-      toBytes32(voteData.nullifier),
-      toBytes32(publicSignals[1]),
-      voteData.ipfs_cid,
-    );
-    const receipt = await tx.wait();
-
-    return {
-      code: 0,
-      gasUsed: receipt.gasUsed ?? 0n,
-    };
-  };
-}
-
 async function main() {
   if (!fs.existsSync(DKG_PUBLIC_KEY_PATH)) {
     throw new Error("public_key.json not found. Run register.js first.");
@@ -276,7 +236,7 @@ async function main() {
   const voting = votingContract.connect(new ethers.NonceManager(signer));
 
   const vKey = JSON.parse(fs.readFileSync(VKEY_PATH, "utf8"));
-  const submitVoteLocal = createVoteSubmitter(voting, vKey);
+  const submitVoteLocal = await createVoteSubmitter(voting, vKey, fetchBallotFromIPFS);
 
   const voterDb = JSON.parse(fs.readFileSync(VOTER_DB_FILE, "utf8"));
   const voterSecrets = JSON.parse(fs.readFileSync(VOTER_SECRETS_FILE, "utf8"));
@@ -460,11 +420,11 @@ main().catch((error) => {
 
 // const VOTER_DB_FILE = path.join(
 //   __dirname,
-//   "../data/voter_data_for_db_500000.json",
+//   "../data/voter_data_for_db_1000.json",
 // );
 // const VOTER_SECRETS_FILE = path.join(
 //   __dirname,
-//   "../data/voter_secrets_for_script_500000.json",
+//   "../data/voter_secrets_for_script_1000.json",
 // );
 // const DKG_PUBLIC_KEY_PATH = path.join(
 //   __dirname,
@@ -825,11 +785,11 @@ main().catch((error) => {
 
 // const VOTER_DB_FILE = path.join(
 //   __dirname,
-//   "../data/voter_data_for_db_500000.json"
+//   "../data/voter_data_for_db_1000.json"
 // );
 // const VOTER_SECRETS_FILE = path.join(
 //   __dirname,
-//   "../data/voter_secrets_for_script_500000.json"
+//   "../data/voter_secrets_for_script_1000.json"
 // );
 // const DKG_PUBLIC_KEY_PATH = path.join(
 //   __dirname,

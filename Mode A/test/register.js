@@ -2,7 +2,8 @@ const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
 const hre = require("hardhat");
-const { buildBabyjub } = require("circomlibjs");
+const { buildBabyjub, buildPoseidon } = require("circomlibjs");
+const { hashElectionId } = require("../utils/voteAcceptance");
 
 const { getContract } = require("../configs/blockchain");
 
@@ -10,7 +11,7 @@ const { ethers } = hre;
 
 const VOTER_DB_FILE = path.join(
   __dirname,
-  "../data/voter_data_for_db_500000.json",
+  "../data/voter_data_for_db_1000.json",
 );
 
 const ELECTION_META_FILE = path.join(
@@ -188,6 +189,12 @@ async function main() {
   }
 
   await (await votingContract.registerTrustees(trusteeAddresses)).wait();
+
+  const poseidon = await buildPoseidon();
+  await (await votingContract.setElectionCryptoParams(
+    hashElectionId(poseidon, ELECTION_ID), publicKey.x, publicKey.y,
+  )).wait();
+  await (await votingContract.startElection()).wait();
 
   console.log("Setup completed.");
   console.log(`Merkle root published for ${voterCount} voters.`);

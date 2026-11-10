@@ -4,7 +4,8 @@ include "./VoterValidity.circom";
 include "./CiphertextValidity.circom";
 include "circomlib/circuits/poseidon.circom";
 
-template VotingCircuit(depth, nCandidates) {
+template VotingCircuit(depth, nCandidates, nSelections) {
+    assert(nSelections > 0 && nSelections <= nCandidates);
     signal input sk;
     signal input pathElements[depth];
     signal input pathIndices[depth];
@@ -35,6 +36,8 @@ template VotingCircuit(depth, nCandidates) {
     voter.election_hash <== election_hash;
 
     component ballots = MultiCiphertextValidity(nCandidates);
+    signal sumVotes[nCandidates + 1];
+    sumVotes[0] <== 0;
     ballots.PKx <== PKx;
     ballots.PKy <== PKy;
     for (var j = 0; j < nCandidates; j++) {
@@ -44,7 +47,9 @@ template VotingCircuit(depth, nCandidates) {
         ballots.C1y[j] <== C1y[j];
         ballots.C2x[j] <== C2x[j];
         ballots.C2y[j] <== C2y[j];
+        sumVotes[j + 1] <== sumVotes[j] + m[j];
     }
+    sumVotes[nCandidates] === nSelections;
 
     nullifier <== voter.nullifier;
     hashCipherAll <== ballots.hashCipherAll;
@@ -56,4 +61,4 @@ template VotingCircuit(depth, nCandidates) {
     // globalCommit <== finalHash.out;
 }
 
-component main = VotingCircuit(10, 2);
+component main {public [root, election_hash, PKx, PKy]} = VotingCircuit(10, 2, 1);

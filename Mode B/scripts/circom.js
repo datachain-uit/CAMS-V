@@ -262,6 +262,7 @@ function buildOneCircuit({
       /contract Groth16Verifier/,
       `contract ${circuitName}Verifier`,
     );
+    solContent = solContent.replace(/[ \t]+$/gm, "");
 
     fs.writeFileSync(solFile, solContent, "utf8");
     console.log(`Solidity contract exported to ${solFile}`);

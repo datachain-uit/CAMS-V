@@ -37,19 +37,19 @@ contract PartialDecryptionVerifier {
     uint256 constant gammax2 = 10857046999023057135944570762232829481370756359578518086990519993285655852781;
     uint256 constant gammay1 = 4082367875863433681332203403145435568316851327593401208105741076214120093531;
     uint256 constant gammay2 = 8495653923123431417604973247489272438418190587263600148770280649306958101930;
-    uint256 constant deltax1 = 5746929250399811518629166204233406427613374323777110765193668796653300543776;
-    uint256 constant deltax2 = 16539553687733642003295003931925441212365213235036373069129789792956024557027;
-    uint256 constant deltay1 = 16261793400060744116291328770651024747577653172480740392845947198959782878237;
-    uint256 constant deltay2 = 11899631621459947652010063875937275113324895157317156251290931862545155472764;
+    uint256 constant deltax1 = 20553326291289234382758896692982633027444932121348472579383931250832013905824;
+    uint256 constant deltax2 = 15861563742774457060956348788586045942912370604897477862555316337415879307151;
+    uint256 constant deltay1 = 6504610096075133397017790662448964268653612162928323322783517651040015148504;
+    uint256 constant deltay2 = 222330934783072508503220672609345356879854476745922349340983580948334990933;
 
-    
+
     uint256 constant IC0x = 20431357175224205237312377571920440044042862218039225998910468438125235192852;
     uint256 constant IC0y = 5164767544341351002117681346144588957783584558542929079703870953294992954358;
-    
+
     uint256 constant IC1x = 2747306906664733988391560042355240664875405533700291346764538841211675981879;
     uint256 constant IC1y = 13960423048751018218029675332184004024321239629116659177229985751881185943861;
-    
- 
+
+
     // Memory data
     uint16 constant pVk = 0;
     uint16 constant pPairing = 128;
@@ -64,7 +64,7 @@ contract PartialDecryptionVerifier {
                     return(0, 0x20)
                 }
             }
-            
+
             // G1 function to multiply a G1 value(x,y) to value in an address
             function g1_mulAccC(pR, x, y, s) {
                 let success
@@ -99,9 +99,9 @@ contract PartialDecryptionVerifier {
                 mstore(add(_pVk, 32), IC0y)
 
                 // Compute the linear combination vk_x
-                
+
                 g1_mulAccC(_pVk, IC1x, IC1y, calldataload(add(pubSignals, 0)))
-                
+
 
                 // -A
                 mstore(_pPairing, calldataload(pA))
@@ -154,9 +154,9 @@ contract PartialDecryptionVerifier {
             mstore(0x40, add(pMem, pLastMem))
 
             // Validate that all evaluations ∈ F
-            
+
             checkField(calldataload(add(_pubSignals, 0)))
-            
+
 
             // Validate all evaluations
             let isValid := checkPairing(_pA, _pB, _pC, _pubSignals, pMem)

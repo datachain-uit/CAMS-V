@@ -8,7 +8,8 @@ const { buildBabyjub, buildPoseidon } = require("circomlibjs");
 const { performance } = require("perf_hooks");
 
 const { getContract } = require("../configs/blockchain");
-const { uploadToIPFS } = require("../utils/ipfs");
+const { uploadToIPFS, fetchBallotFromIPFS } = require("../utils/ipfs");
+const { createVoteSubmitter, hashElectionId } = require("../utils/ballot");
 
 const VOTER_DB_FILE = path.join(
   __dirname,
@@ -110,27 +111,6 @@ function appendCSVData(data) {
   fs.appendFileSync(CSV_FILE, row, "utf8");
 }
 
-function toBytes32(value) {
-  return ethers.zeroPadValue(ethers.toBeHex(BigInt(value)), 32);
-}
-
-function toSolidityProof(proof) {
-  return {
-    pA: [proof.pi_a[0], proof.pi_a[1]],
-    pB: [
-      [proof.pi_b[0][1], proof.pi_b[0][0]],
-      [proof.pi_b[1][1], proof.pi_b[1][0]],
-    ],
-    pC: [proof.pi_c[0], proof.pi_c[1]],
-  };
-}
-
-function hashElectionId(poseidon, value) {
-  const F = poseidon.F;
-  const chars = Array.from(value).map((char) => BigInt(char.charCodeAt(0)));
-  return F.toObject(poseidon(chars)).toString();
-}
-
 function pickRandomChoices(numCandidates, numSelections) {
   if (numSelections > numCandidates) {
     throw new Error("numSelections cannot be greater than numCandidates");
@@ -198,37 +178,6 @@ async function encryptVote(
   };
 }
 
-function createVoteSubmitter(votingContract) {
-  const seen = new Set();
-
-  return async function submitVoteOnChain(proof, publicSignals, voteData) {
-    const key = `${voteData.election_id}|${voteData.nullifier}`;
-    if (seen.has(key)) {
-      return { code: 2, gasUsed: 0n };
-    }
-
-    const { pA, pB, pC } = toSolidityProof(proof);
-
-    const tx = await votingContract.submitVoteWithProof(
-      pA,
-      pB,
-      pC,
-      publicSignals,
-      toBytes32(voteData.nullifier),
-      toBytes32(voteData.hashCipherAll),
-      voteData.ipfs_cid,
-    );
-
-    const receipt = await tx.wait();
-    seen.add(key);
-
-    return {
-      code: 0,
-      gasUsed: receipt.gasUsed ?? 0n,
-    };
-  };
-}
-
 async function generateWitnessAndProof(witnessInput, voterId, index) {
   ensureDir(WITNESS_DIR);
 
@@ -281,7 +230,10 @@ async function main() {
   const { votingContract, signer } = await getContract();
   const voting = votingContract.connect(new ethers.NonceManager(signer));
 
-  const submitVoteOnChain = createVoteSubmitter(voting);
+  const submitVoteOnChain = await createVoteSubmitter(
+    voting,
+    fetchBallotFromIPFS,
+  );
 
   const voterDb = JSON.parse(fs.readFileSync(VOTER_DB_FILE, "utf8"));
   const voterSecrets = JSON.parse(fs.readFileSync(VOTER_SECRETS_FILE, "utf8"));
@@ -441,7 +393,6 @@ main().catch((error) => {
   console.error("Vote failed:", error);
   process.exit(1);
 });
-
 
 // const fs = require("fs");
 // const path = require("path");

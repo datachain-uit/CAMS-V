@@ -138,9 +138,6 @@ async function main() {
   const publicKeyX = BigInt(publicKeyData.x);
   const publicKeyY = BigInt(publicKeyData.y);
 
-  // Retained from the original code.
-  const vKey = JSON.parse(fs.readFileSync(VKEY_PATH, "utf8"));
-
   const voterDb = JSON.parse(fs.readFileSync(VOTER_DB_FILE, "utf8"));
 
   const voterSecrets = JSON.parse(fs.readFileSync(VOTER_SECRETS_FILE, "utf8"));
